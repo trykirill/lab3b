@@ -1,0 +1,1 @@
+/usr/bin/clang++-14 -g CMakeFiles/lab3_b.dir/main.cpp.o CMakeFiles/lab3_b.dir/processing.cpp.o CMakeFiles/lab3_b.dir/lab3_b.cpp.o -o lab3_b 

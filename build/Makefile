@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = /home/kali/Desktop/oop_labs/lab3_b/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -117,24 +127,50 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named lab3_b
+# Target rules for targets named my_queue_lib
 
 # Build rule for target.
-lab3_b: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lab3_b
-.PHONY : lab3_b
+my_queue_lib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 my_queue_lib
+.PHONY : my_queue_lib
 
 # fast build rule for target.
-lab3_b/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab3_b.dir/build.make CMakeFiles/lab3_b.dir/build
-.PHONY : lab3_b/fast
+my_queue_lib/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_queue_lib.dir/build.make CMakeFiles/my_queue_lib.dir/build
+.PHONY : my_queue_lib/fast
+
+#=============================================================================
+# Target rules for targets named lab3
+
+# Build rule for target.
+lab3: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lab3
+.PHONY : lab3
+
+# fast build rule for target.
+lab3/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab3.dir/build.make CMakeFiles/lab3.dir/build
+.PHONY : lab3/fast
+
+#=============================================================================
+# Target rules for targets named lab3_ut
+
+# Build rule for target.
+lab3_ut: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lab3_ut
+.PHONY : lab3_ut
+
+# fast build rule for target.
+lab3_ut/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab3_ut.dir/build.make CMakeFiles/lab3_ut.dir/build
+.PHONY : lab3_ut/fast
 
 lab3_b.o: lab3_b.cpp.o
 .PHONY : lab3_b.o
 
 # target to build an object file
 lab3_b.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab3_b.dir/build.make CMakeFiles/lab3_b.dir/lab3_b.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_queue_lib.dir/build.make CMakeFiles/my_queue_lib.dir/lab3_b.cpp.o
 .PHONY : lab3_b.cpp.o
 
 lab3_b.i: lab3_b.cpp.i
@@ -142,7 +178,7 @@ lab3_b.i: lab3_b.cpp.i
 
 # target to preprocess a source file
 lab3_b.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab3_b.dir/build.make CMakeFiles/lab3_b.dir/lab3_b.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_queue_lib.dir/build.make CMakeFiles/my_queue_lib.dir/lab3_b.cpp.i
 .PHONY : lab3_b.cpp.i
 
 lab3_b.s: lab3_b.cpp.s
@@ -150,7 +186,7 @@ lab3_b.s: lab3_b.cpp.s
 
 # target to generate assembly for a file
 lab3_b.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab3_b.dir/build.make CMakeFiles/lab3_b.dir/lab3_b.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_queue_lib.dir/build.make CMakeFiles/my_queue_lib.dir/lab3_b.cpp.s
 .PHONY : lab3_b.cpp.s
 
 main.o: main.cpp.o
@@ -158,7 +194,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab3_b.dir/build.make CMakeFiles/lab3_b.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab3.dir/build.make CMakeFiles/lab3.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -166,7 +202,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab3_b.dir/build.make CMakeFiles/lab3_b.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab3.dir/build.make CMakeFiles/lab3.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -174,7 +210,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab3_b.dir/build.make CMakeFiles/lab3_b.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab3.dir/build.make CMakeFiles/lab3.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 processing.o: processing.cpp.o
@@ -182,7 +218,7 @@ processing.o: processing.cpp.o
 
 # target to build an object file
 processing.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab3_b.dir/build.make CMakeFiles/lab3_b.dir/processing.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_queue_lib.dir/build.make CMakeFiles/my_queue_lib.dir/processing.cpp.o
 .PHONY : processing.cpp.o
 
 processing.i: processing.cpp.i
@@ -190,7 +226,7 @@ processing.i: processing.cpp.i
 
 # target to preprocess a source file
 processing.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab3_b.dir/build.make CMakeFiles/lab3_b.dir/processing.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_queue_lib.dir/build.make CMakeFiles/my_queue_lib.dir/processing.cpp.i
 .PHONY : processing.cpp.i
 
 processing.s: processing.cpp.s
@@ -198,8 +234,32 @@ processing.s: processing.cpp.s
 
 # target to generate assembly for a file
 processing.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab3_b.dir/build.make CMakeFiles/lab3_b.dir/processing.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_queue_lib.dir/build.make CMakeFiles/my_queue_lib.dir/processing.cpp.s
 .PHONY : processing.cpp.s
+
+queue_tests.o: queue_tests.cpp.o
+.PHONY : queue_tests.o
+
+# target to build an object file
+queue_tests.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab3_ut.dir/build.make CMakeFiles/lab3_ut.dir/queue_tests.cpp.o
+.PHONY : queue_tests.cpp.o
+
+queue_tests.i: queue_tests.cpp.i
+.PHONY : queue_tests.i
+
+# target to preprocess a source file
+queue_tests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab3_ut.dir/build.make CMakeFiles/lab3_ut.dir/queue_tests.cpp.i
+.PHONY : queue_tests.cpp.i
+
+queue_tests.s: queue_tests.cpp.s
+.PHONY : queue_tests.s
+
+# target to generate assembly for a file
+queue_tests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab3_ut.dir/build.make CMakeFiles/lab3_ut.dir/queue_tests.cpp.s
+.PHONY : queue_tests.cpp.s
 
 # Help Target
 help:
@@ -209,7 +269,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... lab3_b"
+	@echo "... test"
+	@echo "... lab3"
+	@echo "... lab3_ut"
+	@echo "... my_queue_lib"
 	@echo "... lab3_b.o"
 	@echo "... lab3_b.i"
 	@echo "... lab3_b.s"
@@ -219,6 +282,9 @@ help:
 	@echo "... processing.o"
 	@echo "... processing.i"
 	@echo "... processing.s"
+	@echo "... queue_tests.o"
+	@echo "... queue_tests.i"
+	@echo "... queue_tests.s"
 .PHONY : help
 
 

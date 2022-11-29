@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/lab3_ut.dir/queue_tests.cpp.o -o lab3_ut  libmy_queue_lib.a /usr/lib/x86_64-linux-gnu/libgtest_main.a /usr/lib/x86_64-linux-gnu/libgtest.a 

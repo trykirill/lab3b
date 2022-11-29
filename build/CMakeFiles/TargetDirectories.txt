@@ -1,3 +1,6 @@
-/home/kali/Desktop/oop_labs/lab3_b/build/CMakeFiles/lab3_b.dir
+/home/kali/Desktop/oop_labs/lab3_b/build/CMakeFiles/my_queue_lib.dir
+/home/kali/Desktop/oop_labs/lab3_b/build/CMakeFiles/lab3.dir
+/home/kali/Desktop/oop_labs/lab3_b/build/CMakeFiles/lab3_ut.dir
+/home/kali/Desktop/oop_labs/lab3_b/build/CMakeFiles/test.dir
 /home/kali/Desktop/oop_labs/lab3_b/build/CMakeFiles/edit_cache.dir
 /home/kali/Desktop/oop_labs/lab3_b/build/CMakeFiles/rebuild_cache.dir

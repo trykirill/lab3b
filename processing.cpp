@@ -7,25 +7,16 @@ int processing(Queue &my_queue){
 	int mode;
 	do{
 	std::cout << "[0] вставить в очередь\n"
-		<< "[1]  удалить из очереди\n "
+		<< "[1]  удалить из очереди\n"
 		<< "[2]  вывести очередь\n";
 	getInt(mode, "enter mode -> ");
 	if(mode == 0){
-		if(!my_queue == 2){
-			std::cout << "queue is full\n";
-		}
-		else{
-			std::cin >> val;
-			my_queue << val;
-		}
+		std::cin >> val;
+		my_queue << val;
 	}
 	else if(mode == 1){
-		if(!my_queue == 1){
-			std::cout << "queue is empty\n";
-		}
-		else{
-			my_queue >> val;
-			std::cout << val << std::endl;
+		if(!(my_queue >> val)){
+			std::cout << val;
 		}
 	}
 	else if(mode == 2){
